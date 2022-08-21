@@ -21,10 +21,11 @@ jobs:
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
-    runs-on: alpine
-Is 
+    runs-on: alpine-edge
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: add
+      run: apk update && add curl alpine-conf alpine-base 
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
